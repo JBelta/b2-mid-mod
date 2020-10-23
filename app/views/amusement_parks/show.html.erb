@@ -1,2 +1,11 @@
 <h1><%= @amusement_park.park_name %></h1>
-<h3>Admission: <%= @amusement_park.price %></h3>
+<h3>Admission: $<%= @amusement_park.price %></h3>
+
+<h2> Rides </h2>
+
+<ul>
+<% @amusement_park.rides.each do |ride| %>
+    <li><%= ride.ride_name %></li>
+<% end  %>
+</ul>
+<p>Thrill-o-meter: <%= @amusement_park.thrill_scale %></p>
