@@ -28,5 +28,14 @@ describe "As a user" do
       expect(page).to have_content(@loop.ride_name)
       expect(page).to have_content(@go_round.ride_name)
     end
+
+    it "Can add a ride to the workload" do
+      visit "/mechanics/#{@joe.id}"
+save_and_open_page
+      fill_in "Ride", with: @the_rocket.ride_name
+      click_on "Submit"
+
+      expect(page).to have_content(@the_rocket.ride_name)
+    end
   end
 end
