@@ -6,3 +6,11 @@
   <li><%= ride.ride_name %></li>
   <% end %>
 </ul>
+<br>
+<%= form_tag "/mechanics/#{@mechanic.id}", method: :post do  %>
+  <h3>Add a Ride to workload</h3>
+  <%= label_tag "Add Ride" %>
+  <%= text_field_tag "Ride" %>
+
+  <%= submit_tag "Submit" %>
+<% end %>
