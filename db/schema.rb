@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_23_152946) do
+ActiveRecord::Schema.define(version: 2020_10_23_155911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "amusment_parks", force: :cascade do |t|
+  create_table "amusement_parks", force: :cascade do |t|
     t.string "park_name"
     t.integer "price"
   end
@@ -35,11 +35,8 @@ ActiveRecord::Schema.define(version: 2020_10_23_152946) do
   create_table "rides", force: :cascade do |t|
     t.string "ride_name"
     t.integer "thrill_rating"
-    t.bigint "amusment_park_id"
-    t.index ["amusment_park_id"], name: "index_rides_on_amusment_park_id"
   end
 
   add_foreign_key "ride_mechanics", "mechanics"
   add_foreign_key "ride_mechanics", "rides"
-  add_foreign_key "rides", "amusment_parks"
 end
