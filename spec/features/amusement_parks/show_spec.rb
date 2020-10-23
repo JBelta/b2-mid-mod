@@ -19,7 +19,7 @@ describe "As a user" do
       go_round = dz.rides.create(ride_name: "Merry Go Round", thrill_rating: 3)
 
       visit "/amusement_parks/#{dz.id}"
-save_and_open_page
+
       expect(page).to have_content(the_rocket.ride_name)
       expect(page).to have_content(go_round.ride_name)
       expect(page).to have_content(6.5)
