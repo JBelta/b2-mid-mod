@@ -40,7 +40,7 @@ describe "As a user" do
       RideMechanic.create(ride_id: @loop.id, mechanic_id: @joe.id)
       RideMechanic.create(ride_id: @go_round.id, mechanic_id: @joe.id)
       visit "/mechanics/#{@joe.id}"
-save_and_open_page
+
       fill_in "Ride", with: @the_rocket.ride_name
       click_on "Submit"
 
