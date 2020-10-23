@@ -7,7 +7,7 @@ describe "As a user" do
 
       visit "/amusement_parks/#{dz.id}"
 
-      expect(page).to have_content(dz.name)
+      expect(page).to have_content(dz.park_name)
       expect(page).to have_content(dz.price)
     end
   end
